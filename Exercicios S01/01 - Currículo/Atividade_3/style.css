@@ -1,0 +1,17 @@
+body{
+  background-color: #eaf1cd;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2{
+  color: #9fd46d;
+}
+
+p{
+color: #b7df86;
+}
+
+#foto {
+  border-radius: 250px;
+  box-shadow: 2px 5px 5px gray;
+}

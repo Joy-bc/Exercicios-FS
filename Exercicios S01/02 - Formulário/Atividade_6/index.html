@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seja um membro!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <form>
+        <h1>Cadastre-se e seja um membro!</h1>
+        <hr />
+        <section class="informacoes-basicas">
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Digite seu nome"
+            required="required"
+          />
+
+          <label for="sobrenome">Sobrenome</label>
+          <input
+            type="text"
+            id="sobrenome"
+            name="sobrenome"
+            placeholder="Digite seu sobrenome"
+            required="required"
+          />
+          <br />
+
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Digite seu email"
+            required="required"
+          />
+
+          <label for="telefone">Telefone</label>
+          <input
+            type="tel"
+            id="telefone"
+            name="telefone"
+            placeholder="(xx) xxxxx-xxxx"
+            required="required"
+          />
+          <br />
+
+          <label for="cpf">CPF</label>
+          <input
+            type="number"
+            id="cpf"
+            name="cpf"
+            placeholder="Digite seu CPF"
+            required="required"
+          />
+          <br />
+
+          <label for="data-nascimento">Data de Nascimento</label>
+          <input
+            type="date"
+            id="data-nascimento"
+            name="data-nascimento"
+            required="required"
+          />
+
+          <label for="idade">idade</label>
+          <input
+            type="number"
+            id="idade"
+            name="idade"
+            min="18"
+            placeholder="Digite sua idade"
+            required="required"
+          />
+          <br />
+
+          <label for="cor-preferida">Qual sua cor preferida?</label>
+          <input
+            type="color"
+            id="cor-preferida"
+            name="cor-preferida"
+            value="#a6a6fc"
+          />
+        </section>
+
+        <hr />
+
+        <section class="genero-pronomes">
+          <div class="identidade-genero">
+            <label>Identidade de gênero</label>
+            <br />
+
+            <input
+              type="radio"
+              id="mulher-cis"
+              name="genero"
+              value="mulher-cis"
+            />
+            <label for="mulher-cis">Mulher Cis</label>
+            <br />
+
+            <input
+              type="radio"
+              id="mulher-trans"
+              name="genero"
+              value="mulher-trans"
+            />
+            <label for="mulher-trans">Mulher Trans</label>
+            <br />
+
+            <input type="radio" id="travesti" name="genero" value="travesti" />
+            <label for="travesti">Travesti</label>
+            <br />
+
+            <input
+              type="radio"
+              id="homem-cis"
+              name="genero"
+              value="homem-cis"
+            />
+            <label for="homem-cis">Homem Cis</label>
+            <br />
+
+            <input
+              type="radio"
+              id="homem-trans"
+              name="genero"
+              value="homem-trans"
+            />
+            <label for="homem-trans">Homem trans</label>
+            <br />
+
+            <input type="radio" id="boyceta" name="genero" value="boyceta" />
+            <label for="boyceta">Boyceta</label>
+            <br />
+
+            <input
+              type="radio"
+              id="nao-binarie"
+              name="genero"
+              value="nao-binarie"
+            />
+            <label for="nao-binarie">Não Binárie</label>
+            <br />
+
+            <input type="radio" id="none" name="genero" value="none" />
+            <label for="none">Prefiro não dizer</label>
+            <br />
+          </div>
+
+          <div class="pronomes">
+            <label>Quais seus Pronomes?</label>
+            <br />
+
+            <input
+              type="checkbox"
+              id="ele-dele"
+              name="pronomes"
+              value="ele-dele"
+            />
+            <label for="ele-dele">Ele/Dele</label>
+            <br />
+
+            <input
+              type="checkbox"
+              id="ela-dela"
+              name="pronomes"
+              value="ela-dela"
+            />
+            <label for="ela-dela">Ela/Dela</label>
+            <br />
+
+            <input
+              type="checkbox"
+              id="elu-delu"
+              name="pronomes"
+              value="elu-delu"
+            />
+            <label for="elu-delu">Elu/Delu</label>
+            <br />
+          </div>
+        </section>
+
+        <hr />
+
+        <section class="endereco">
+          <label>Endereço completo</label>
+          <br />
+
+          <label for="rua">Rua</label>
+          <input
+            type="text"
+            id="rua"
+            name="rua"
+            placeholder="Digite a rua"
+            required="required"
+          />
+
+          <label for="numero">N°</label>
+          <input
+            type="number"
+            id="numero"
+            name="numero"
+            placeholder="Digite o numero"
+            required="required"
+          />
+          <br />
+
+          <label for="bairro">Bairro</label>
+          <input
+            type="text"
+            id="bairro"
+            name="bairro"
+            placeholder="Digite o bairro"
+            required="required"
+          />
+
+          <label for="cidade">Cidade</label>
+          <input
+            type="text"
+            id="cidade"
+            name="cidade"
+            placeholder="Digite a cidade"
+            required="required"
+          />
+          <br />
+
+          <label for="estado">Estado</label>
+          <input
+            type="text"
+            id="estado"
+            name="estado"
+            placeholder="Digite o estado"
+            required="required"
+          />
+
+          <label for="cep">CEP</label>
+          <input
+            type="number"
+            id="cep"
+            name="cep"
+            placeholder="Digite o CEP"
+            required="required"
+          />
+        </section>
+
+        <hr />
+
+        <section class="login">
+          <label for="usuário">Usuáario</label>
+          <input
+            type="text"
+            id="usuario"
+            name="usuario"
+            placeholder="Escolha um usuário"
+            required="required"
+          />
+          <br />
+
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Digite sua senha"
+            required="required"
+          />
+
+          <label for="confirme-senha">Confirme sua senha</label>
+          <input
+            type="password"
+            id="confirme-senha"
+            name="confirme-senha"
+            placeholder="Confirme sua senha"
+            required="required"
+          />
+          <br />
+
+          <label for="foto">Escolha uma foto de perfil</label>
+          <input
+            type="file"
+            id="foto"
+            name="foto"
+            accept="image/png, image/jpeg"
+          />
+        </section>
+
+        <hr />
+
+        <section class="botoes">
+          <input type="submit" value="Cadastrar" />
+          <input type="reset" value="Limpar" />
+        </section>
+      </form>
+    </section>
+  </body>
+</html>
