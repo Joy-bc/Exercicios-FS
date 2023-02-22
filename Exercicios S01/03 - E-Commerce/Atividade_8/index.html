@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="Fotos/Logo.png" alt="logo" />
+        </div>
+        <menu>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="">Sobre Nós</a></li>
+            <li><a href="">Carrinho</a></li>
+          </ul>
+        </menu>
+      </nav>
+    </header>
     <main>
       <section class="container">
         <div class="produtos">
@@ -17,7 +31,7 @@
             class="foto"
           />
           <h3>Pão de Trigo</h3>
-          <p>
+          <p class="descricao">
             O nosso pão de trigo é uma releitura do pão de padaria que estamos
             acostumados a comer no dia a dia. Ele é um pão básico de fermentação
             natural, feito de forma artesanal e com farinha branca, enriquecido
@@ -27,9 +41,12 @@
             Disponível em 500g
           </p>
           <br />
-          <p>Valor: 500g por R$15</p>
+          <p class="valor">Valor: 500g por R$15</p>
           <br />
-          <button class="add-carrinho">Adicione ao carrinho</button>
+          <div>
+            <button class="comprar-agora">Comprar agora</button>
+            <button class="add-carrinho">Adicione ao carrinho</button>
+          </div>
         </div>
 
         <div class="produtos">
@@ -39,7 +56,7 @@
             class="foto"
           />
           <h3>Pão Multigrãos</h3>
-          <p>
+          <p class="descricao">
             O Multigrãos é um pão de fermentação natural 50% integral com
             linhaça dourada, linhaça marrom, gergelim preto e chia. Ele é feito
             de forma artesanal, com farinhas orgânicas e enriquecido com azeite
@@ -50,9 +67,12 @@
             Disponível em 500g
           </p>
           <br />
-          <p>Valor: 500g por R$15</p>
+          <p class="valor">Valor: 500g por R$15</p>
           <br />
-          <button class="add-carrinho">Adicione ao carrinho</button>
+          <div>
+            <button class="comprar-agora">Comprar agora</button>
+            <button class="add-carrinho">Adicione ao carrinho</button>
+          </div>
         </div>
 
         <div class="produtos">
@@ -62,7 +82,7 @@
             class="foto"
           />
           <h3>Pão Integral</h3>
-          <p>
+          <p class="descricao">
             Apresentamos o pão integral, aquele pão sem farinha branca à muito
             esperado. É um pão que combina com tudo e pode ser consumido do café
             da manhã a janta sem peso na consciência. Feito de fermentação
@@ -73,9 +93,12 @@
             Disponível em 500g
           </p>
           <br />
-          <p>Valor: 500g por R$15</p>
+          <p class="valor">Valor: 500g por R$15</p>
           <br />
-          <button class="add-carrinho">Adicione ao carrinho</button>
+          <div>
+            <button class="comprar-agora">Comprar agora</button>
+            <button class="add-carrinho">Adicione ao carrinho</button>
+          </div>
         </div>
 
         <div class="produtos">
@@ -85,7 +108,7 @@
             class="foto"
           />
           <h3>Pão de Cacau</h3>
-          <p>
+          <p class="descricao">
             O CACAU é um pão adocicado de fermentação natural com cacau em pó
             100% e gotas de chocolate ao leite misturadas à massa. Ele é feito
             de forma artesanal, com farinha de trigo orgânica e enriquecido com
@@ -96,9 +119,12 @@
             Disponível em 600g
           </p>
           <br />
-          <p>Valor: R$20</p>
+          <p class="valor">Valor: R$20</p>
           <br />
-          <button class="add-carrinho">Adicione ao carrinho</button>
+          <div>
+            <button class="comprar-agora">Comprar agora</button>
+            <button class="add-carrinho">Adicione ao carrinho</button>
+          </div>
         </div>
 
         <div class="produtos">
@@ -108,7 +134,7 @@
             class="foto"
           />
           <h3>Trio de Ciabattas</h3>
-          <p>
+          <p class="descricao">
             A ciabatta é um pão originalmente italiano, pensada para competir
             com as baguetes francesas como uma boa opção para sanduíches. Nossa
             releitura da ciabatta é feita com farinha branca e integral e são
@@ -120,9 +146,12 @@
             Disponível com 3 ciabattas de 120g cada.
           </p>
           <br />
-          <p>Valor: R$12</p>
+          <p class="valor">Valor: R$12</p>
           <br />
-          <button class="add-carrinho">Adicione ao carrinho</button>
+          <div>
+            <button class="comprar-agora">Comprar agora</button>
+            <button class="add-carrinho">Adicione ao carrinho</button>
+          </div>
         </div>
 
         <div class="produtos">
@@ -132,7 +161,7 @@
             class="foto"
           />
           <h3>Massa de Pizza</h3>
-          <p>
+          <p class="descricao">
             Massa de pizza pré assada. Acompanha uma camada de molho de tomate,
             para você adicionar o seu sabor preferido ou criar um recheio 100%
             original! Em duas versões: semi integral e de farinha branca. <br />
@@ -145,15 +174,18 @@
             Disponível em unidades de 30cm de diâmetro.
           </p>
           <br />
-          <p>Valor: R$20</p>
+          <p class="valor">Valor: R$20</p>
           <br />
-          <button class="add-carrinho">Adicione ao carrinho</button>
+          <div>
+            <button class="comprar-agora">Comprar agora</button>
+            <button class="add-carrinho">Adicione ao carrinho</button>
+          </div>
         </div>
 
         <div class="produtos">
           <img src="Fotos/geleia.jpg" alt="Foto da Geleia" class="foto" />
           <h3>Geleia de Frutas Vermelhas</h3>
-          <p>
+          <p class="descricao">
             Docinha na medida certa com aquela leve acidez natural das frutas,
             sem conservantes, feita de forma artesanal e com produtos orgânicos.
             <br />
@@ -162,15 +194,18 @@
             Disponível em 185g
           </p>
           <br />
-          <p>Valor: 185g por R$20</p>
+          <p class="valor">Valor: 185g por R$20</p>
           <br />
-          <button class="add-carrinho">Adicione ao carrinho</button>
+          <div>
+            <button class="comprar-agora">Comprar agora</button>
+            <button class="add-carrinho">Adicione ao carrinho</button>
+          </div>
         </div>
 
         <div class="produtos">
           <img src="Fotos/manauê.jpg" alt="Foto do Manauê" class="foto" />
           <h3>Manauê com chocolate branco</h3>
-          <p>
+          <p class="descricao">
             O Manauê é um bolo mais que cremoso de fubá com coco e chocolate
             branco. Ele foi imaginado originalmente como uma versão de fubá do
             brownie de chocolate, mas acabou se tornando uma releitura de seu
@@ -183,9 +218,12 @@
             Disponível em 280g
           </p>
           <br />
-          <p>Valor: R$12</p>
+          <p class="valor">Valor: R$12</p>
           <br />
-          <button class="add-carrinho">Adicione ao carrinho</button>
+          <div>
+            <button class="comprar-agora">Comprar agora</button>
+            <button class="add-carrinho">Adicione ao carrinho</button>
+          </div>
         </div>
       </section>
     </main>
