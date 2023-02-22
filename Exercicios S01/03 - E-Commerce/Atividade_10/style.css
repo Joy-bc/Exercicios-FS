@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  width: 100%;
+  background: rgb(213, 144, 13);
+  background: linear-gradient(
+    328deg,
+    rgba(213, 144, 13, 1) 20%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+header {
+  background-color: rgb(233, 227, 177);
+  padding: 25px;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-start;
+}
+
+.logo img {
+  width: 100px;
+  display: flex;
+  align-self: flex-start;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav ul li {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #000000cc;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.produtos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  border: 5px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  margin: 40px 20px;
+  background-color: rgb(233, 227, 177);
+  padding: 8px;
+}
+
+h3 {
+  padding: 10px;
+}
+
+.descricao {
+  font-size: 13px;
+  text-align: justify;
+}
+
+.valor {
+  padding: 8px;
+  font-style: italic;
+}
+
+.foto {
+  width: 250px;
+  border-radius: 150px;
+}
+
+.comprar-agora,
+.add-carrinho {
+  text-align: center;
+  background-color: rgba(213, 144, 13, 1);
+  border: none;
+  color: white;
+  padding: 3px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.comprar-agora a,
+.add-carrinho a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+}
+
+.check-out {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.check-outProdutos {
+  background: rgb(233, 227, 177);
+  padding: 20px;
+  width: 600px;
+  margin: auto;
+  display: flex;
+  padding: 30px;
+}
+
+.check-outImagem img {
+  width: 150px;
+  border-radius: 150px;
+}
+
+.check-outDescricao {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-outDescricao p {
+  font-style: italic;
+}
+
+.check-outFrete,
+.check-outTotal {
+  background: rgb(233, 227, 177);
+  padding: 20px;
+  width: 600px;
+  margin: auto;
+  display: flex;
+  padding: 30px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.check-outTotal button {
+  text-align: center;
+  background-color: rgba(213, 144, 13, 1);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
