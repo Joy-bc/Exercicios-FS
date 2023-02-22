@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Modelos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <p class="logo"><strong>Joy's</strong> Cars</p>
+        <menu>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="cadastro-marca.html">Marca</a></li>
+            <li><a href="#">Modelo</a></li>
+            <li><a href="cadastro-veiculo.html">Veiculo</a></li>
+          </ul>
+        </menu>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h1>Cadastro de Modelo</h1>
+        <hr />
+        <form>
+          <label for="modelo">Modelo</label>
+          <input
+            type="text"
+            name="modelo"
+            id="modelo"
+            placeholder="Digite o nome do Modelo"
+          />
+          <br /><br />
+
+          <label for="marcasNoDom">Qual a marca?</label>
+          <select name="marcasNoDom" class="marcasNoDom"></select>
+
+          <button type="submit" onclick="adicionarModelo()">Cadastrar</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
