@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Despesas em Grupo</title>
+    <link rel="stylesheet" href="Styles/GroupExpenses.css" />
+    <link rel="stylesheet" href="FormModal/index.css" />
+    <link rel="stylesheet" href="Styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a class="link" href="index.html"
+        ><img src="assets/arrow.svg" alt="arrow" />Despesas Individuais</a
+      >
+
+      <h1>Despesas em Grupo</h1>
+      <button id="open-modal-button">Adicionar despesa</button>
+
+      <!-- The Modal -->
+      <div id="form-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Nova movimentação financeira</h3>
+            <img
+              src="images/close.svg"
+              alt="Fechar modal"
+              onclick="closeModal()"
+            />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="title"><b>Título</b></label>
+            <input
+              type="text"
+              placeholder="Escreva"
+              name="title"
+              id="title-input"
+              required
+            />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="numberOfParticipants"><b>Participantes</b></label>
+            <input
+              type="number"
+              placeholder="5"
+              name="numberOfParticipants"
+              id="numberOfParticipants-input"
+              required
+            />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="amount"><b>Valor</b></label>
+            <input
+              type="number"
+              placeholder="50"
+              name="amount"
+              id="amount-input"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            onclick="addGroupExpense()"
+            id="add-new-group-expense-button"
+            class="add-new-financial-movement-button"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="table" id="groupExpenses">
+        <div class="row">
+          <div>Descrição</div>
+          <div>Minha Parte</div>
+          <div>Valor Total</div>
+        </div>
+      </section>
+
+      <script src="Scripts/GroupExpenses.js"></script>
+      <script src="FormModal/index.js"></script>
+    </main>
+  </body>
+</html>
