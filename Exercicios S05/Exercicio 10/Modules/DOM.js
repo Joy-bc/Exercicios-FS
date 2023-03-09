@@ -1,4 +1,5 @@
 import { filmesCadastrados } from "./filme.js";
+import * as icones from "./icons.js";
 
 function listarFilmes() {
   const filme = filmesCadastrados[filmesCadastrados.length - 1];

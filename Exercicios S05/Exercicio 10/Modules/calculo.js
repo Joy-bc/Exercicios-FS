@@ -1,3 +1,5 @@
+import { filmesCadastrados } from "./filme.js";
+
 export default function calcularDuracao() {
   const duracaoAssistida = filmesCadastrados.reduce(
     (duracao, filme) => (duracao += filme.assistido ? +filme.duracao : 0),

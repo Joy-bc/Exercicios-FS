@@ -1,6 +1,6 @@
 import calcularDuracao from "./calculo.js";
 import { listarFilmes } from "./DOM.js";
-import * as icones from "./icons";
+import * as icones from "./icons.js";
 
 class Filme {
   titulo;
@@ -63,7 +63,7 @@ function pegarIndexDoFilme(titulo) {
   return filmesCadastrados.findIndex((filme) => filme.titulo === titulo);
 }
 
-function atualizarFilme(titulo, chave) {
+window.atualizarFilme = (titulo, chave) => {
   const index = pegarIndexDoFilme(titulo);
   const novoValorChave = !filmesCadastrados[index][chave];
 
@@ -95,4 +95,4 @@ function maxFavorito() {
   );
 }
 
-export { Filme, filmesCadastrados, cadastrarFilme, atualizarFilme };
+export { Filme, filmesCadastrados, cadastrarFilme };

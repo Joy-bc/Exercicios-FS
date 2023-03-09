@@ -2,7 +2,7 @@
 
 // Importação
 
-import { cadastrarFilme } from "./Modules/filme";
+import { cadastrarFilme } from "./Modules/filme.js";
 import { buscar } from "./Modules/DOM.js";
 
 // Variáveis
