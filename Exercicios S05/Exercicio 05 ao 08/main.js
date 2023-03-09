@@ -1,3 +1,8 @@
+"use strict";
+
+// Importação
+import * as icones from "./Modules/icons.js";
+
 // Classes
 
 class Filme {
@@ -21,8 +26,10 @@ class Filme {
 // Variáveis
 
 const container = document.getElementById("container");
+const btnCadastrar = document.getElementById("botao-cadastrar");
+const inputBuscar = document.getElementById("buscar");
 
-const filmesCadastrados = [];
+window.filmesCadastrados = [];
 
 // Ações
 
@@ -30,11 +37,12 @@ document
   .querySelector(".cadastro-de-filme form")
   .addEventListener("submit", (event) => event.preventDefault());
 
-listarFilmes();
+btnCadastrar.addEventListener("click", cadastrarFilme);
+inputBuscar.addEventListener("keyup", buscar);
 
 // Criação de funções
 
-window.cadastrarFilme = () => {
+function cadastrarFilme() {
   let inputTitulo = document.getElementById("titulo");
   let inputDuracao = document.getElementById("duracao");
   let inputNota = document.getElementById("nota");
@@ -98,16 +106,58 @@ function criarCards(filme) {
   container.insertAdjacentHTML(
     "beforeend",
     `
-      <div class="divCard">
+      <div class="divCard" id="${filme.titulo
+        .toLowerCase()
+        .replaceAll(" ", "-")}">
       <div class="divFoto"> <img src="${filme.img}" alt="Foto do Filme"></div>
       <div class="divConteudo">
         <div class="divNota">${filme.nota}</div>
         <div class="divDuracao">${filme.duracao}</div>
         <div class="divTitulo">${filme.titulo}</div>
-        <div class="botaoAssistido"><button>assistido</button></div>
-        <div class="botaoFavovirto"><button>favorito</button></div>
+        <div><button class="botao-assistido" onclick="atualizarFilme('${
+          filme.titulo
+        }', 'assistido')">
+        ${filme.assistido ? icones.assistido : icones.nao_assistido}
+        </button></div>
+        <div><button class="botao-favorito" onclick="atualizarFilme('${
+          filme.titulo
+        }', 'favorito')">
+        ${filme.favorito ? icones.favorito : icones.nao_favorito}
+        </button></div>
       </div>
     </div>
     `
+  );
+}
+
+window.pegarIndexDoFilme = (titulo) => {
+  return filmesCadastrados.findIndex((filme) => filme.titulo === titulo);
+};
+
+window.atualizarFilme = (titulo, chave) => {
+  const index = pegarIndexDoFilme(titulo);
+  const novoValorChave = !filmesCadastrados[index][chave];
+
+  if (chave === "favorito" && novoValorChave && maxFavorito())
+    return alert("Já existem três filmes favoritos");
+
+  filmesCadastrados[index][chave] = novoValorChave;
+
+  atualizarIcone(titulo, chave, novoValorChave);
+};
+
+window.atualizarIcone = (id, chave, valorChave) => {
+  document
+    .getElementById(id.toLowerCase().replaceAll(" ", "-"))
+    .querySelector(`.botao-${chave}`).innerHTML =
+    icones[valorChave ? chave : `nao_${chave}`];
+};
+
+function maxFavorito() {
+  return (
+    filmesCadastrados.reduce(
+      (acumulador, filme) => (acumulador += filme.favorito ? 1 : 0),
+      0
+    ) >= 3
   );
 }
