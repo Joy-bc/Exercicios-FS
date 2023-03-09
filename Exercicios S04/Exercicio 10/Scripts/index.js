@@ -1,7 +1,23 @@
+const monthNames = [
+  'janeiro',
+  'fevereiro',
+  'março',
+  'abril',
+  'maio',
+  'junho',
+  'julho',
+  'agosto',
+  'setembro',
+  'outubro',
+  'novembro',
+  'dezembro',
+];
 const valueInput = document.getElementById('value-input');
 const descriptionInput = document.getElementById('description-input');
 
+var mesAtual = monthNames[new Date().getMonth()];
 
+document.getElementById('month').innerHTML = mesAtual;
 
 class FinancialTransaction {
   description;
@@ -9,97 +25,131 @@ class FinancialTransaction {
 
   constructor(description, value) {
     this.description = description;
-    this.value = value;
+    this.value = Number(value);
   }
 }
 
-class FinancialTransactionManager{
+class FinancialTransactionsManager {
   earningsList;
   expensesList;
+  #totalEarnings = 0;
+  #totalExpenses = 0;
+  #finalBalance = 0;
 
-  constructor (earningsArray = [], expensesArray = []) {
-    this.earningsList = earningsArray;
-    this.expensesList = expensesArray;
+  constructor(inicialEarnings = [], inicialExpenses = []) {
+    this.earningsList = inicialEarnings;
+    this.expensesList = inicialExpenses;
 
-    this.createScreen()
+    this.createScreen();
   }
 
-createScreen() {
-  this.generateLists(this.earningsList, 'earnings-list');
-  this.generateLists(this.expensesList, 'expenses-list');
-}
+  createScreen() {
+    if (this.earningsList > 0) {
+      this.createHtmlListFromArray(this.earningsList, 'earnings-list');
+    }
 
-  generateLists(list, listElementId) {
-    for (var i = 0; i < list.length; i++) {
-      var li = document.createElement('li');
-      li.innerText = `${list[i].description}: R$ ${list[i].value}`;
-  
-      document.getElementById(listElementId).appendChild(li);
+    if (this.expensesList > 0) {
+      this.createHtmlListFromArray(this.expensesList, 'expenses-list');
+    }
+
+    this.updateIndicators();
+  }
+
+  addEarning(description, value) {
+    const addedFinancialTransaction = new FinancialTransaction(
+      description,
+      value
+    );
+
+    this.earningsList.push(addedFinancialTransaction);
+    this.updateScreen(addedFinancialTransaction, 'earnings-list');
+    this.clearInputs();
+
+    window.alert(
+      `A entrada ${addedFinancialTransaction.description} foi adicionada com sucesso!`
+    );
+  }
+
+  addExpense(description, value) {
+    const addedFinancialTransaction = new FinancialTransaction(
+      description,
+      value
+    );
+
+    this.expensesList.push(addedFinancialTransaction);
+    this.updateScreen(addedFinancialTransaction, 'expenses-list');
+    this.clearInputs();
+
+    window.alert(
+      `A despesa ${addedFinancialTransaction.description} foi adicionada com sucesso!`
+    );
+  }
+
+  updateScreen(newItem, htmlListId) {
+    this.createListItem(newItem, htmlListId);
+    this.updateIndicators();
+  }
+
+  updateIndicators() {
+    this.#totalEarnings = this.earningsList.reduce(
+      (accumulator, currentValue) =>
+        (accumulator += Number(currentValue.value)),
+      0
+    );
+
+    this.#totalExpenses = this.expensesList.reduce(
+      (accumulator, currentValue) =>
+        (accumulator += Number(currentValue.value)),
+      0
+    );
+
+    this.#finalBalance = this.#totalEarnings - this.#totalExpenses;
+
+    document.getElementById('total-earnings').innerHTML = this.#totalEarnings;
+    document.getElementById('total-expenses').innerHTML = this.#totalExpenses;
+    document.getElementById('final-balance').innerHTML = this.#finalBalance;
+  }
+
+  createHtmlListFromArray(objectsArray, listElementId) {
+    for (var i = 0; i < objectsArray.length; i++) {
+      this.createListItem(objectsArray[i], listElementId);
     }
   }
+
+  createListItem(object, listElementId) {
+    var li = document.createElement('li');
+    li.innerText = `${object.description}: R$ ${object.value}`;
+
+    document.getElementById(listElementId).appendChild(li);
+  }
+
+  clearInputs() {
+    descriptionInput.value = '';
+    valueInput.value = '';
+  }
 }
 
-const financialTransactionManager = new FinancialTransactionManager([
-  new FinancialTransaction('Salário', 4000),
-  new FinancialTransaction('Freela', 400),
-],
-[
-  new FinancialTransaction('Alimentação', 650),
-  new FinancialTransaction('PSN', 40),
-  new FinancialTransaction('Energia', 500),
-])
+const financialTransactionsManager = new FinancialTransactionsManager();
 
-var mesAtual = 'janeiro';
-var entradas = 8000;
-var saidas = 400;
-var saldo = 1000;
-
-
-// Mês
-document.getElementById('month').innerHTML = mesAtual;
-
-// Entradas
-document.getElementById('total-earnings').innerHTML = entradas;
-
-// Saídas
-document.getElementById('total-expenses').innerHTML = saidas;
-
-// Saldo
-document.getElementById('final-balance').innerHTML = saldo;
-
-function addFinancialMovement() {
+function addFinancialTransaction() {
   const earningRadioValueIsChecked =
     document.getElementById('earning-radio').checked;
 
-  if (earningRadioValueIsChecked) {
-    addEarning();
+  const isValidForm = descriptionInput.value.length > 0 && valueInput.value > 0;
+
+  if (isValidForm) {
+    if (earningRadioValueIsChecked) {
+      financialTransactionsManager.addEarning(
+        descriptionInput.value,
+        valueInput.value
+      );
+    } else {
+      financialTransactionsManager.addExpense(
+        descriptionInput.value,
+        valueInput.value
+      );
+    }
   } else {
-    addExpense();
+    window.alert('O formulário está inválido!');
   }
-}
-
-function addExpense() {
-  const newExpense = {
-    description: descriptionInput.value,
-    value: valueInput.value,
-  };
-  expensesList.push(newExpense);
-
-  var li = document.createElement('li');
-  li.innerText = `${newExpense.description}: R$ ${newExpense.value}`;
-
-  document.getElementById('expenses-list').appendChild(li);
-}
-
-function addEarning() {
-  const newExpense = {
-    description: descriptionInput.value,
-    value: valueInput.value,
-  };
-  expensesList.push(newExpense);
-
-  var li = document.createElement('li');
-  li.innerText = `${newExpense.description}: R$ ${newExpense.value}`;
-
-  document.getElementById('earnings-list').appendChild(li);
 }
