@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca de filmes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section class="cadastro-de-filme">
+        <div>
+         
+            <input type="text" id="titulo" placeholder="Titulo do Filme" />
+            <input type="number" id="duracao" placeholder="Duração" />
+            <input type="number" id="nota" placeholder="Nota" min="0" max="5" />
+
+            <button id="botao-cadastrar" onclick="cadastrar()">
+              Cadastrar
+            </button>
+      
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
