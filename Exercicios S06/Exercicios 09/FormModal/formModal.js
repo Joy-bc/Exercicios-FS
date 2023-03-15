@@ -1,15 +1,4 @@
-const openModalBtn = document.querySelector(".open-modal");
-const closeModalBtn = document.getElementById("closeModal");
-const modal = document.getElementById("modal");
-const fade = document.getElementById("fade");
-
-[openModalBtn, closeModalBtn, fade].forEach((el) => {
-  el.addEventListener("click", () => toggleModal());
-});
-
-const toggleModal = () => {
-  [modal, fade].forEach((el) => el.classList.toggle("hide"));
-};
+import { showPosts } from "../Modules/domControler.js";
 
 function updateModal(currentPost) {
   const title = document.querySelector("#postTitle h3");

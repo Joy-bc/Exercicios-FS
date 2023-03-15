@@ -1,3 +1,4 @@
+import { toggleModal } from "../main.js";
 import { fetchPosts, fetchUser, updateCurrentPost } from "./utils.js";
 
 let page = 1;
@@ -32,6 +33,10 @@ function createPostsList(posts, htmlWrapperId) {
           </div></div>
           `
     );
+
+    document
+      .querySelector(`#post-${post.id} .open-modal`)
+      .addEventListener("click", toggleModal);
   });
 }
 

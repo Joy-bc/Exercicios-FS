@@ -27,6 +27,8 @@ async function updateCurrentPost(postId, postTitle, postBody) {
   };
 
   updateModal(currentPost);
+
+  console.log(currentPost);
 }
 
 export { fetchPosts, fetchUser, updateCurrentPost };
