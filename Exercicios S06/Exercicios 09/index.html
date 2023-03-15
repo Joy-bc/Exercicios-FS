@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Blog</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./FormModal/formModal.css" />
+  </head>
+  <body>
+    <main>
+      <button id="openModal">Open Modal</button>
+      <section id="fade" class="hide"></section>
+      <section id="modal" class="hide">
+        <div id="modalHeader">
+          <div id="postTitle"><h3>Titulo</h3></div>
+          <div id="postBtn"><button id="closeModal">Fechar</button></div>
+        </div>
+        <div id="postBody"><p>Body</p></div>
+
+        <div id="PostComents">
+          <h4 id="comentsTitle">Comentários</h4>
+          <div id="comentsContainer">
+            <div id="post-comment">
+              <span id="post-comment-user">E-mail</span>
+              <p id="post-comment-body">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+                deleniti molestias facere eum hic cum tempore laudantium amet id
+                rerum.
+              </p>
+            </div>
+            <div id="post-comment">
+              <span id="post-comment-user">E-mail</span>
+              <p id="post-comment-body">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+                deleniti molestias facere eum hic cum tempore laudantium amet id
+                rerum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      <section id="posts-whapper"></section>
+
+      <div id="load-btn"><button>Carregar mais posts</button></div>
+    </main>
+
+    <script src="./main.js"></script>
+    <script src="./FormModal/formModal.js" defer></script>
+  </body>
+</html>
