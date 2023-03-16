@@ -1,0 +1,94 @@
+#closeModal {
+  padding: 0.6rem 1.2rem;
+  background-color: #888;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  opacity: 0.9rem;
+  font-size: 1rem;
+  transform: 0.4s;
+}
+
+#closeModal:hover {
+  opacity: 0.9;
+}
+
+#fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+#modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-width: 90%;
+  max-height: 500px;
+  background-color: #dcfca9;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  z-index: 10;
+  overflow-y: scroll;
+}
+
+#fade,
+#modal {
+  transition: 0.5s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+#modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+#postBody,
+#PostComents,
+#comentsTitle,
+#post-comment {
+  margin-bottom: 1rem;
+}
+
+#modal.hide,
+#fade.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#postTitle h3 {
+  font-size: 20px;
+}
+
+#postBody p {
+font-size: 16px;
+}
+
+#comentsTitle {
+  font-size: 15px;
+}
+
+#post-comment-title {
+  font-size: 15px;
+}
+
+#post-comment-user {
+  font-size: 12px;
+  font-style: italic;
+}
+
+#post-comment-body{
+  font-size: 13px;
+}

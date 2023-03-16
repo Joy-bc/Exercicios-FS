@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #dcfca9;
+}
+
+#posts-whapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#load-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+#load-btn button {
+  background-color: #b2b4ab;
+  border: none;
+  padding: .2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: #6e834b;
+}
+
+.divCard {
+  width: 800px;
+  border-radius: 1rem;
+  background-color: #b2b4ab;
+  box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.divConteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: #6e834b;
+  gap: 0.3rem;
+  margin: 10px;
+}
+
+.open-modal{
+border: none;
+background-color: #b2b4ab;
+color: #6e834b;
+cursor: pointer;
+}
+
+.post-title {
+  font-size: 18px;
+}
+
+.divBody p {
+  font-size: 13px;
+  margin: 03px auto;
+}
+
+.divUser {
+  align-self: flex-start;
+}
+
+.divUser p {
+  font-size: 15px;
+  font-style: italic;
+}
