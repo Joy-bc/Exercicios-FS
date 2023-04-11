@@ -1,0 +1,38 @@
+<h3 class="text-sucess border-bottom border-success">
+  Cadastro de Disciplinas Curriculares
+</h3>
+
+
+<form class="row">
+
+<div class="mb-3">
+  <input-box titulo="Nome" tipo="text" />
+</div>
+
+<div class="mb-3">
+  <input-box titulo="Carga Horária" tipo="number" />
+</div>
+
+<div class="mb-3">
+  <input-box titulo="Escola" tipo="text" />
+</div>
+
+<div class="mb-3">
+  <select-box titulo="Professor(a)" profUm="Otávio" profDois="Carla" profTres="Leandro" profQuatro="Cláudia"/>
+</div>
+
+<div class="d-flex f-column">
+  <div class="form-check form-check-inline">
+    <radio-box nome="opcional" id="naoOpcional" valor="Não" />
+    </div>
+
+    <div class="form-check form-check-inline">
+      <radio-box nome="opcional" id="eOpcional" valor="Sim" />
+    </div>
+</div>
+
+<div class="d-flex justify-content-end">
+  <button-box nome="Cadastrar" tipo="button" data-bs-toggle="modal" data-bs-target="#sendModal" />
+</div>
+</form>
+

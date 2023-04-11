@@ -1,0 +1,56 @@
+<h3 class="text-info border-bottom border-info">Cadastro para {{ nome }}</h3>
+
+<form class="row">
+  <div class="col-6 mb-3">
+   <input-box titulo="Nome" tipo="text" />
+  </div>
+
+  <div class="col-6 mb-3">
+    <input-box titulo="Sobrenome" tipo="text" />
+  </div>
+
+  <div class="col-12 mb-3">
+    <input-box titulo="Email" tipo="email" />
+  </div>
+
+  <div class="col-6 mb-3">
+    <input-box titulo="Senha" tipo="password" />
+  </div>
+
+  <div class="col-6 mb-3">
+    <input-box titulo="Idade" tipo="number" />
+  </div>
+
+  <div class="col-12 mb-3">
+    <select-box />
+  </div>
+
+  <div class="col-12">
+    <label class="form-label">Quais tecnologias você já estudou?</label>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" checked />
+      <label class="form-label-check">Angular</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" />
+      <label class="form-label-check">Docker</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" />
+      <label class="form-label-check">Java</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" />
+      <label class="form-label-check">Javascript</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" />
+      <label class="form-label-check">Python</label>
+    </div>
+  </div>
+
+  <div class="col-12 mt-2">
+    <button-box (clicou)="resetar()" titulo="Reset" tipo="submit" bg="warning" class="mr-3"/>
+    <button-box (clicou)="enviar()" titulo="Enviar" tipo="submit" bg="success"/>
+  </div>
+</form>

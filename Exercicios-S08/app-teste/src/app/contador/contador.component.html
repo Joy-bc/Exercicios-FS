@@ -1,0 +1,16 @@
+<div class="m-3 d-flex flex-column align-items-center">
+  <h3>Contador</h3>
+
+  <span>O resultado da soma é {{ getSoma() }}</span>
+  <span>O resultado da diminuição é {{ getDiminuir() }}</span>
+  <span>O resultado da multiplicação é {{ getMulti() }}</span>
+  <span>O resultado da divisão é {{ getDivi() }}</span>
+
+  <div class="d-flex flex-row">
+    <button (click)="add()" class="btn btn-primary">+</button>
+
+    <span>{{ contagem }}</span>
+
+    <button (click)="remove()" class="btn btn-primary">-</button>
+  </div>
+</div>
